@@ -39,6 +39,8 @@ except URLError as e:
   streamlit.error()
 streamlit.write('The user entered ', fruit_choice)
 
+# don't run anything past here while we troubleshoot
+streamlit.stop()
 
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+ fruit_choice)
 
@@ -47,8 +49,7 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # outputs it on the screen as a table via dataframe function
 streamlit.dataframe(fruityvice_normalized)
 
-# don't run anything past here while we troubleshoot
-streamlit.stop()
+
 
 
 
