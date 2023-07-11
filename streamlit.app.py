@@ -43,15 +43,14 @@ try:
     
 except URLError as e:
   streamlit.error()
-streamlit.write('The user entered ', fruit_choice)
+#streamlit.write('The user entered ', fruit_choice)
 
-
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+ fruit_choice)
+#fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+ fruit_choice)
 
 # takes json version of the response and normalizes it 
-fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+#fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # outputs it on the screen as a table via dataframe function
-streamlit.dataframe(fruityvice_normalized)
+#streamlit.dataframe(fruityvice_normalized)
 
 streamlit.header("The fruit load list contains:")
 #snowflake-related functions
